@@ -20,6 +20,7 @@ router.get('/:id', async (req, res, next) => {
     try {
         const movie = await Movie.findById(req.params.id);
 
+        //Comprobamos que exista
         if (!movie) {
             return res.status(404).json('No encontrada');
         }
@@ -51,7 +52,8 @@ router.put('/:id', async (req, res, next) => {
         const updated = await Movie.findByIdAndUpdate(
             req.params.id,
             req.body,
-            { new: true } // devuelve actualizado
+            // devuelve actualizado
+            { new: true }
         );
 
         return res.json(updated);

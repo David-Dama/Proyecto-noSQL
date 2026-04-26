@@ -7,7 +7,7 @@ connect();
 const server = express();
 const PORT = 3000;
 
-// IMPORTANTE → para POST/PUT
+// IMPORTANTE para POST/PUT
 server.use(express.json());
 
 server.use('/movies', movieRoutes);
