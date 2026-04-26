@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost:27017/proyecto-movies')
     .then(async () => {
         await Movie.collection.drop().catch(() => {});
         await Movie.insertMany(movieDocs);
-        console.log('🌱 Seed hecha');
+        console.log('Seed hecha');
     })
     .catch(err => console.log(err))
     .finally(() => mongoose.disconnect());

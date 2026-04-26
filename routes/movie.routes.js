@@ -4,7 +4,7 @@ const Movie = require('../models/Movie');
 const router = express.Router();
 
 
-// 📖 GET todos
+// GET todos
 router.get('/', async (req, res, next) => {
     try {
         const movies = await Movie.find();
@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
 });
 
 
-// 🔍 GET por id
+// GET por id
 router.get('/:id', async (req, res, next) => {
     try {
         const movie = await Movie.findById(req.params.id);
@@ -31,7 +31,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 
-// ➕ POST crear
+// POST crear
 router.post('/', async (req, res, next) => {
     try {
         const newMovie = new Movie(req.body);
@@ -45,7 +45,7 @@ router.post('/', async (req, res, next) => {
 });
 
 
-// ✏️ PUT editar
+// PUT editar
 router.put('/:id', async (req, res, next) => {
     try {
         const updated = await Movie.findByIdAndUpdate(
@@ -61,7 +61,7 @@ router.put('/:id', async (req, res, next) => {
 });
 
 
-// 🗑️ DELETE
+// DELETE
 router.delete('/:id', async (req, res, next) => {
     try {
         await Movie.findByIdAndDelete(req.params.id);

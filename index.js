@@ -25,5 +25,5 @@ server.use((error, req, res, next) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`🚀 http://localhost:${PORT}`);
+    console.log(`http://localhost:${PORT}`);
 });
